@@ -1,3 +1,4 @@
+// src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -22,7 +23,7 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from: "VEYR <info@veyr.ch>",
       to: ["info@veyr.ch"],
-      reply_to: email,
+      replyTo: email, // 👈 FIX: camelCase for the SDK
       subject: "New contact form submission",
       text: `Name: ${name}
 Email: ${email}
@@ -35,7 +36,7 @@ ${message}`,
       return NextResponse.json({ error: error.message || "Email failed" }, { status: 500 });
     }
 
-    // 2) Fire-and-forget auto-reply (don’t block the response)
+    // 2) Fire-and-forget auto-reply
     if (!email.endsWith("@veyr.ch")) {
       void resend.emails.send({
         from: "VEYR <info@veyr.ch>",
