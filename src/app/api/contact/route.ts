@@ -9,8 +9,6 @@ type ContactBody = {
   message: string;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
     const { name, email, company, message } = (await req.json()) as Partial<ContactBody>;
@@ -19,11 +17,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
+    // Lazy init so build doesn't crash if env isn't available at compile time
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY is missing at runtime");
+      return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
+    }
+    const resend = new Resend(apiKey);
+
     // 1) Send to your team inbox
     const { data, error } = await resend.emails.send({
       from: "VEYR <info@veyr.ch>",
       to: ["info@veyr.ch"],
-      replyTo: email, // 👈 FIX: camelCase for the SDK
+      replyTo: email, // camelCase
       subject: "New contact form submission",
       text: `Name: ${name}
 Email: ${email}
