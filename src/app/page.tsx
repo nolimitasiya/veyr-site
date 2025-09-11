@@ -49,7 +49,7 @@ export default function Home() {
           <div>
             <h2 className="text-2xl font-bold">Book a 20-minute intro</h2>
             <p className="mt-2 text-gray-600 text-sm">
-              Tell us about your fleet and security challenges. We'll share
+              Tell us about your fleet and security challenges. We&apos;ll share
               benchmarks from pilots and outline a tailored plan.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
