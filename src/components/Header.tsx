@@ -1,7 +1,7 @@
-import Logo from "@/components/Logo";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
-export default function HeaderClean() {
+export default function Header() {
   return (
     <header className="sticky top-0 z-[100] bg-white/90 backdrop-blur border-b">
       <div className="w-full h-14 px-4 sm:px-6 lg:px-8 flex items-center">
