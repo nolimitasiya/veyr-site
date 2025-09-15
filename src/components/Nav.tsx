@@ -9,11 +9,10 @@ export default function Nav() {
           <span className="font-semibold">VEYR</span>
         </Link>
         <nav className="hidden sm:flex items-center gap-6 text-sm">
-          <Link href="/how" className="hover:opacity-80">How it works</Link>
-          <Link href="/use-cases" className="hover:opacity-80">Use cases</Link>
-          <Link href="/pilot" className="hover:opacity-80">Pilot</Link>
           <Link href="/about" className="hover:opacity-80">About</Link>
-          <Link href="/contact" className="hover:opacity-80">Contact</Link>
+          <Link href="/pilot" className="hover:opacity-80">Pilot Program</Link>
+          <Link href="/use-cases" className="hover:opacity-80">Articles</Link>
+          <Link href="/contact" className="hover:opacity-80">Contact Us</Link>
         </nav>
         <Link
           href="/contact"

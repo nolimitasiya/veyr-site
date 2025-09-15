@@ -1,18 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: false, // fail build if linting errors exist
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+// next.config.js
+const nextConfig = {
+  async redirects() {
+    return [
+      { source: "/how-it-works", destination: "/pilot", permanent: false }, // 307/302
+    ];
   },
 };
-
-export default nextConfig;
+module.exports = nextConfig;

@@ -73,7 +73,7 @@ export default function ContactPage() {
         </form>
       ) : (
         <div role="status" aria-live="polite" className="mt-8 rounded-2xl border p-6 bg-white">
-    <h2 className="text-xl font-semibold"> ✅ yMessage received</h2>
+    <h2 className="text-xl font-semibold"> ✅ Message received</h2>
     <p className="mt-2 text-gray-700">
       Thank you for contacting VEYR. A member of our team will be in touch within one business day.
     </p>
