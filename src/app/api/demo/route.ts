@@ -84,11 +84,9 @@ VEYR Team`,
     }
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    console.error("Resend demo error:", err);
-    return NextResponse.json(
-      { ok: false, error: err?.message || "Email send failed" },
-      { status: 500 }
-    );
-  }
+  } catch (err) {
+  console.error("Resend demo error:", err);
+  const message = err instanceof Error ? err.message : "Email send failed";
+  return NextResponse.json({ ok: false, error: message }, { status: 500 });
+}
 }

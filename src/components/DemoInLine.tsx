@@ -42,9 +42,9 @@ const msg =
 setError(msg);
 
       }
-    } catch (err) {
-      setError("Network error. Please check your connection and try again.");
-    } finally {
+    } catch {
+  setError("Network error. Please check your connection and try again.");
+} finally {
       setLoading(false);
     }
   };
