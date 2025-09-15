@@ -1,12 +1,12 @@
-'use client';
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-[100] bg-white/90 backdrop-blur border-b">
       <div className="w-full h-14 px-4 sm:px-6 lg:px-8 flex items-center">
         <Link href="/" className="shrink-0">
-          <span className="font-semibold">VEYR</span>
+          <Logo fontSize={32} className="origin-left" />
         </Link>
         <nav className="ml-auto flex items-center gap-6 text-sm md:text-base font-normal">
           <Link href="/about" className="hover:opacity-70">About</Link>
