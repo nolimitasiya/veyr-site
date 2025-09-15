@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
       from,
       to: toOwner,
       subject: "Demo Request",
-      reply_to: email ? [email] : undefined,
+      replyTo: email ?? undefined,
       text:
 `New demo request:
 
