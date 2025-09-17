@@ -23,10 +23,7 @@ export default function Header() {
 
         <nav className="ml-auto flex items-center gap-6 text-sm md:text-base font-normal">
           {NAV.map(({ href, label }) => {
-            const isActive =
-              pathname === href ||
-              (href !== "/" && pathname.startsWith(href));
-
+            const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
             return (
               <Link
                 key={href}
@@ -40,6 +37,16 @@ export default function Header() {
               </Link>
             );
           })}
+
+          {/* CTA — Book a demo (nav, top-right) */}
+          <Link
+            href="/contact"  // change to "/demo" or Calendly URL if you like
+            className="inline-flex items-center rounded-full border border-black/10 bg-black px-4 py-2 text-white
+                       text-sm md:text-base font-semibold hover:bg-black/90 focus-visible:outline-none
+                       focus-visible:ring-2 focus-visible:ring-black/20"
+          >
+            Book a demo
+          </Link>
         </nav>
       </div>
     </header>
