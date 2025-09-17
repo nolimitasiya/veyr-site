@@ -57,19 +57,6 @@ export default function SingleArticle() {
             </section>
           ))}
         </div>
-
-        <div className="mt-12 border-t pt-8 text-center md:text-left">
-          <h3 className="text-lg font-semibold mb-2">Book a demo</h3>
-          <p className="text-gray-700 mb-4">
-            See how real-time detection behavesfor your own vehicles or homes.
-          </p>
-          <Link
-            href="/#demo"
-            className="inline-block px-6 py-3 rounded-full bg-black text-white hover:bg-gray-800 transition"
-          >
-            Book a Demo
-          </Link>
-        </div>
       </article>
     </main>
   );
